@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "43d73e00-f180-449a-8d1e-4843b1ad0224",
+		"name": "BiomedicaClasificador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17689194"
+	},
+	"item": [
+		{
+			"name": "Crear Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreCompleto\": \"Juan Pérez\",\r\n  \"edad\": 45,\r\n  \"sexo\": \"Masculino\",\r\n  \"lugarNacimiento\": \"Ciudad de México\",\r\n  \"lugarResidencia\": \"Guadalajara\",\r\n  \"diabetes\": true,\r\n  \"hipertension\": false,\r\n  \"enfermedadesCardiacas\": false,\r\n  \"cancer\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/registros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todos los Registros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/registros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un Registro por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/registros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un Registro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreCompleto\": \"Juan Pérez Actualizado\",\r\n  \"edad\": 46,\r\n  \"sexo\": \"Masculino\",\r\n  \"lugarNacimiento\": \"Ciudad de México\",\r\n  \"lugarResidencia\": \"Guadalajara\",\r\n  \"diabetes\": false,\r\n  \"hipertension\": true,\r\n  \"enfermedadesCardiacas\": false,\r\n  \"cancer\": false\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/registros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar un Registro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/registros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"registros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
