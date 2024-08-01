@@ -11,19 +11,32 @@ export class RegistroService {
   }
 
   async create(data: Partial<Registro>): Promise<Registro> {
+    if (!data.presion) {
+      data.presion = '120/80';  // Establecer un valor por defecto si no está presente
+    }
     const registro = RegistroRepository.create(data);
     return await RegistroRepository.save(registro);
   }
 
   async update(id: number, data: Partial<Registro>): Promise<Registro | null> {
-    const registro = await this.getById(id);
-    if (!registro) return null;
-    RegistroRepository.merge(registro, data);
-    return await RegistroRepository.save(registro);
+    try {
+      const registro = await this.getById(id);
+      if (!registro) return null;
+      RegistroRepository.merge(registro, data);
+      return await RegistroRepository.save(registro);
+    } catch (error) {
+      console.error('Error updating registro:', error);
+      throw error;
+    }
   }
 
   async delete(id: number): Promise<boolean> {
-    const result = await RegistroRepository.delete(id);
-    return result.affected !== 0;
+    try {
+      const result = await RegistroRepository.delete(id);
+      return result.affected !== 0;
+    } catch (error) {
+      console.error('Error deleting registro:', error);
+      throw error;
+    }
   }
 }

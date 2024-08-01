@@ -6,7 +6,7 @@ export class Registro {
   id!: number;
 
   @Column()
-  nombreCompleto!: string;
+  nombre!: string;
 
   @Column()
   edad!: number;
@@ -15,20 +15,17 @@ export class Registro {
   sexo!: string;
 
   @Column()
-  lugarNacimiento!: string;
+  estatura!: number;  // Corrigiendo tipo de datos
 
   @Column()
-  lugarResidencia!: string;
+  peso!: number;  // Corrigiendo tipo de datos
 
   @Column()
-  diabetes!: boolean;
+  padecimientos!: string;
+
+  @Column({ default: '120/80' })  // Añadiendo valor por defecto como string
+  presion!: string;
 
   @Column()
-  hipertension!: boolean;
-
-  @Column()
-  enfermedadesCardiacas!: boolean;
-
-  @Column()
-  cancer!: boolean;
+  spo2!: number;  // Corrigiendo tipo de datos
 }

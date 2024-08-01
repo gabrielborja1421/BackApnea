@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "6921e53f-bb99-4202-ac40-e2b1b68f417f",
+		"name": "Registro API",
+		"description": "Documentación de la API para la gestión de registros.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17689194"
+	},
+	"item": [
+		{
+			"name": "Crear Registro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombrePaciente\": \"Juan Pérez\",\n  \"edad\": 45,\n  \"sexo\": \"Masculino\",\n  \"padecimientos\": \"Diabetes, Hipertensión\",\n  \"estatura\": 175,\n  \"peso\": 80,\n  \"presionArterial\": \"120/80\",\n  \"spo2\": 98\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/registros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Todos los Registros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/registros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Registro",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombrePaciente\": \"Juan Pérez\",\n  \"edad\": 46,\n  \"sexo\": \"Masculino\",\n  \"padecimientos\": \"Diabetes\",\n  \"estatura\": 175,\n  \"peso\": 82,\n  \"presionArterial\": \"130/85\",\n  \"spo2\": 97\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/registros/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Registro",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/registros/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"registros",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
